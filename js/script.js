@@ -1,6 +1,4 @@
-jogadores=['Vinícius','Vitor','Felipe','Douglas',
-            'Gabriel','Guilherme','Lima','Christian','Michel','Fabrício','Ramos',
-            'Fagner','Guilherme','GB','Victor','Oswaldo','Jonatas'];
+jogadores=[' ','Christian','Douglas', 'Fabrício', 'Fagner', 'Felipe', 'Gabriel', 'GB', 'Guilherme', 'Jonatas', 'Lima', 'Michel', 'Oswaldo', 'Ramos', 'Victor', 'Vinícius', 'Vitor'];
 
 function comboJogadores(){
     for(var i=0;i<this.jogadores.length;i++){
@@ -17,8 +15,7 @@ function preencheAdversario(){
 function golsJogo(){
     var jogador = document.getElementById('listaJogadores').value;
     console.log(jogador)
-    document.getElementById('placarFranco').innerHTML +="<br/>"
-    document.getElementById('placarFranco').innerHTML += "Jogador "+jogador+"<button id = "+jogador+" onclick='somaNossa(id)'>+</button><span id='jogador"+jogador+"'> 0</span><button id="+jogador+" onclick='subtraiNossa(id)'>-</button><br/>";
+    document.getElementById('placarFranco').innerHTML += "<table><tr><td width='180px'> "+jogador+"</td><td width='20'><span id='jogador"+jogador+"'> 0 </span></td><td width='20px'><button id = "+jogador+" onclick='somaNossa(id)'>+</button></td><td width='20px'><button id = "+jogador+" onclick='subtraiNossa(id)'>-</button></td></tr></table>";
    
 }
 
@@ -53,4 +50,3 @@ function subtraiNossa(id){
     document.getElementById('golNosso').innerText =gol;
     document.getElementById('jogador'+id).innerText =golJogador;
 }
-
