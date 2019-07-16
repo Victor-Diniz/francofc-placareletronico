@@ -6,25 +6,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body onload="comboJogadores()">
-        <img src="img/franco.jpg" height="50" width="50"><br/>
-        Data do jogo: <input type="date"/><br/>
-        Adversário:<input type="text" id="txtAdversario" style="width:19.3%;margin-left:1.35%"/><button id="btnListaAdv"onclick="preencheAdversario()">Adicionar</button><br/>
-        Jogadores:<select id="listaJogadores" style="margin-left: 1.7%;width:19.3%"></select><button id="btnListaFranco"onclick="golsJogo()" style="margin-left:1%;">Adicionar</button><br/>
-        <div id="placarPrincipal">
-            <h3 style="text-align: center;">Placar</h3>
-            <h4 style="text-align: center;">FRANCO F.C <span id="golNosso"> 0 </span> x <span id="golDeles">0</span> <span id="lblAdversario"></span></h4>
-            
+        <table border="0" style="width: 100%">
+            <tr>
+                <td></td>
+                <td><p style="text-align: center"><img src="img/franco.jpg"  height="150" width="150" ></p></td>
+            </tr>
+            <tr>
+                <td><p style="text-align: right"> Data do jogo:</p></td>
+                <td><input type="date" style="width: 100%"/></td>
+            </tr>
+            <tr>
+                <td><p style="text-align: right">Adversário:</p></td>
+                <td><input type="text" id="txtAdversario" style="width:100%"/></td>
+                <td><button id="btnListaAdv"onclick="preencheAdversario()">Adicionar</button></td>
+            </tr>
+            <tr>
+                <td><p style="text-align: right">Jogadores:</p></td>
+                <td><select id="listaJogadores" style="width:100%"></select></td>
+                <td><button id="btnListaFranco"onclick="golsJogo()">Adicionar</button></td>
+            </tr>
+        </table>
+</br>
+    <h1 style="text-align: center">Placar</h1>
+        <table  border="1" style="margin:auto">
+            <tr>
+                <td width="150px"></td>
+                <td><p style="text-align: center">X</p></td>
+                <td width="150px">
+                        <table border="0" >
+                            <tr>
+                                <td><p>Adversario</p></td>
+                                <td><button onclick="somaDeles()">+</button></td>
+                                <td><button onclick="subtraiDeles()">-</button></td>
+                            </tr>
+
+                        </table> 
+            </tr>
+            <tr>
+                <td><p style="text-align: center" >Franco F.C.<p></td>
+                <td><p style="text-align: center;margin: 5px"><span id="golNosso"> 0 </span> x <span id="golDeles">0</span></p></td>
+                <td><p style="text-align: left"><span id="lblAdversario"></span></p></td>
+            </tr>
+        </table>
+</br></br>
+    <p>Jogadores</p>
+        <table border="0">
             <div id="placarFranco" >
-               
-                Gol contra <button id="contra" onclick="somaNossa(id)">+</button><span id="jogadorcontra"> 0</span><button id="contra" onclick="subtraiNossa(id)">-</button><br/>
-               
-                <div id="placarAdv">
-                    Gol do <span id="lblAdversario2"></span> <button onclick="somaDeles()">+</button><button id="btnSubstraiDeles"onclick="subtraiDeles()">-</button>
-                </div>
+                    <tr> 
+                       <td width='180px'>Gol contra</td>
+                       <td width='20px'><span id="jogadorcontra"> 0</span></td>
+                       <td width='20px'><button id="contra" onclick="somaNossa(id)">+</button></td>                       
+                       <td width='20px'><button id="contra" onclick="subtraiNossa(id)">-</button></td>
+                   </tr>
             </div>
-            <br/>
-            <br/>
-           
-        </div>
+        </table> 
     </body>
 </html>
